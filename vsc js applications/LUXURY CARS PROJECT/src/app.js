@@ -1,0 +1,20 @@
+import page from "../node_modules/page/page.mjs";
+import { session, updateNav } from "./utils.js";
+import { showCreate } from "./views/createView.js";
+import { showDashboard } from "./views/dashboardView.js";
+import { showDetails } from "./views/detailsView.js";
+import { showEdit } from "./views/editView.js";
+import { showHome } from "./views/homeView.js";
+import { showLogin } from "./views/loginView.js";
+import { showRegister } from "./views/registerView.js";
+
+page(session);
+page(updateNav);
+page("/", showHome);
+page("/login", showLogin);
+page("/register", showRegister);
+page("/dashboard", showDashboard);
+page("/details/:id", showDetails);
+page("/create", showCreate);
+page("/edit/:id", showEdit);
+page.start();
